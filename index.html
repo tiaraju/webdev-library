@@ -1,0 +1,55 @@
+<!doctype html>
+<!DOCTYPE html>
+<html ng-app='library'>
+<head>
+	<meta charset="utf-8">
+	<title>Book Store</title>
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+  	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+  	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+	<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.2.4.js"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<script src="model/library.js"></script>
+	<script src="js/librarycontroller.js"></script>
+
+</head>
+<body ng-controller="libraryController as ctrl">
+
+	<table id="booktable" class="table table-striped">
+		<tr>
+			<td class="titles"> Title</td>
+			<td class="titles"> Writers</td>
+			<td class="titles"> Description</td>
+			<td class="titles"> Price</td>
+			<td class="titles"> Comments</td>
+			<td class="titles"> Add Comment</td>
+			<td class="titles"> Edit</td>
+		</tr>
+		{{books|json}}
+		<tr ng-repeat="book in ctrl.books" >
+			<td>{{book.title}}</td>
+			<td>{{books.writers}}</td>
+			<td>{{book.description}}</td>
+			<td>{{book.price | currency}}</td>
+			<td>
+				<p ng-repeat="comment in book.comments">
+					{{comment}}	
+				</p>
+			</td>
+			<td><a class="glyphicon glyphicon-plus active" ng-click="showCommentDialog();setBookId(book.id)"></a> </td>
+			<td ><a class="glyphicon glyphicon-edit"  ng-click=""></a></td>
+		</tr>
+
+	</table>
+	<div>
+		<button class="btn btn-primary" ng-click="showModal()">Add Book</button>
+	</div>
+
+	
+</body>
+</html>

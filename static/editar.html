@@ -1,0 +1,39 @@
+<div class="container" ng-controller="LivrariaController as ctrl">
+	<div class="modal-header">
+		  <h3>Editar livro</h3>
+	</div>
+
+	<div class="modal-body">
+		<div class="row">
+			<div class="col-md-12">
+				<label class="col-md-2">Taaatulo:</label> 
+				<input type="text" class="col-md-4" ng-model="ctrl.novoLivro.titulo">
+			</div>
+			<div class="col-md-12">
+				<label class="col-md-2">Descrição:</label> 
+				<input type="text" class="col-md-4" ng-model="ctrl.novoLivro.descricao">
+			</div>
+			<div class="col-md-12">
+				<label class="col-md-2">Preço:</label> 
+				<input type="text" class="col-md-4" ng-model="ctrl.novoLivro.preco">
+			</div>
+			<div class="col-md-12">
+				<label class="col-md-2">Url da capa:</label> 
+				<input type="text" class="col-md-4" ng-model="ctrl.novoLivro.url_capa">
+			</div>
+			<div class="col-md-12">
+				<label class="col-md-2">Autores:</label> 
+				<input type="text" class="col-md-4" ng-model="ctrl.novoLivro.autores">
+			</div>	
+		</div>
+	</div>
+
+	<div class="modal-footer">
+
+		<div align="left">
+		<button class="btn btn-primary" type="button" ng-click="ok()">Editar</button>
+		<button class="btn btn-primary" type="button" ng-click="ctrl.save()">Novo</button>
+        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancelar</button>
+         </div>
+	</div>
+<div>

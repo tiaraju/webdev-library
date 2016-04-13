@@ -1,0 +1,12 @@
+<div class="modal-header">
+  <h3 class="modal-title">Add a Comment</h3>
+</div>
+<div class="modal-body">
+
+    <h3> Title: {{ctrl.books[bookID].title}} </h3>
+    <p> Comment :<textarea  ng-model="book.comment" type="texta"></textarea></p>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary" type="button" ng-click="saveComment(book.comment)">Add</button>
+  <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+</div>
